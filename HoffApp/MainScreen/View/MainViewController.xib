@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="HoffApp" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="iOd-pR-a9J" id="tRk-h1-fok"/>
+                <outlet property="paginationActivityIndicator" destination="gAD-vX-s0I" id="Lm4-bv-mXb"/>
+                <outlet property="view" destination="iN0-l3-epB" id="cAn-yT-Ezh"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Jnu-JV-xKk">
+                    <rect key="frame" x="20" y="56" width="374" height="20"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dx5-1z-LqH">
+                            <rect key="frame" x="0.0" y="0.0" width="143" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="jLI-cm-Vt3"/>
+                            </constraints>
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="filters-icon-1" imagePlacement="leading" imagePadding="10">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="Фильтры (12)">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                            </buttonConfiguration>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyg-6l-fNp">
+                            <rect key="frame" x="198" y="0.0" width="176" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="syl-ND-AJm"/>
+                            </constraints>
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="sorted-icon" imagePadding="10">
+                                <attributedString key="attributedTitle">
+                                    <fragment content="По популярности">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="14" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="sortredButton:" destination="-1" eventType="touchUpInside" id="0C3-12-UVT"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="lyg-6l-fNp" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Dx5-1z-LqH" secondAttribute="trailing" constant="55" id="lex-zX-n5c"/>
+                    </constraints>
+                </stackView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="iOd-pR-a9J">
+                    <rect key="frame" x="0.0" y="101" width="414" height="795"/>
+                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G3u-ko-dlM">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="cw7-6a-Uch"/>
+                        <outlet property="delegate" destination="-1" id="mWw-D6-XQN"/>
+                    </connections>
+                </collectionView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="gAD-vX-s0I">
+                    <rect key="frame" x="197" y="820" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="e7U-H5-dpi"/>
+                        <constraint firstAttribute="height" constant="20" id="v1g-ib-0PK"/>
+                    </constraints>
+                    <color key="color" systemColor="systemRedColor"/>
+                </activityIndicatorView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="gAD-vX-s0I" secondAttribute="bottom" constant="22" id="5qw-dk-g6Y"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Jnu-JV-xKk" secondAttribute="trailing" constant="20" id="Bqo-f5-Uxx"/>
+                <constraint firstItem="iOd-pR-a9J" firstAttribute="top" secondItem="Jnu-JV-xKk" secondAttribute="bottom" constant="25" id="Iar-Pm-7gc"/>
+                <constraint firstItem="Jnu-JV-xKk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="JX7-cd-w86"/>
+                <constraint firstItem="iOd-pR-a9J" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="PMd-co-JEh"/>
+                <constraint firstItem="gAD-vX-s0I" firstAttribute="centerX" secondItem="iOd-pR-a9J" secondAttribute="centerX" id="TZ9-i4-Die"/>
+                <constraint firstAttribute="trailing" secondItem="iOd-pR-a9J" secondAttribute="trailing" id="Wva-Vm-jRd"/>
+                <constraint firstAttribute="bottom" secondItem="iOd-pR-a9J" secondAttribute="bottom" id="Z8V-71-8ii"/>
+                <constraint firstItem="Jnu-JV-xKk" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="12" id="xZX-rq-1d6"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="85.714285714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="filters-icon-1" width="20" height="20"/>
+        <image name="sorted-icon" width="20" height="20"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
